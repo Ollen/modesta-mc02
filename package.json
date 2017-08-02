@@ -1,0 +1,9 @@
+{
+  "name": "modesta-mc02",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "r-script": "^0.0.3"
+  }
+}
