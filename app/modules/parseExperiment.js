@@ -40,27 +40,36 @@ const parseExperiment = (experiment) => {
 
     // Clean experiment results.
     for (let i = 0; i < simulation.trials; i++) {
-        w_trials[i] = new Array();
-        wo_trials[i] = new Array();
+        w_trials[i] = {card: new Array(), totalValue: 0};
+        wo_trials[i] = {card: new Array(), totalValue: 0};
+
 
         for (let j = 0; j < simulation.draws; j++) {
+            // Get the experiment draw value in a trial
             let w_value = experiment.w_replacement[i][j];
             let wo_value = experiment.wo_replacement[i][j];
 
+            // Get the card and suite value.
             let w_cardData = {
                 value: cardValue(w_value),
                 suite: cardSuite(w_value),
-                card: w_value
+                deckValue: w_value
             };
             let wo_cardData = {
                 value: cardValue(wo_value),
                 suite: cardSuite(wo_value),
-                card: wo_value
+                deckValue: wo_value
             };
+            
+            // Compute for the total value of the trial.
+            w_trials[i].totalValue += w_cardData.value;
+            wo_trials[i].totalValue += wo_cardData.value;
 
-            w_trials[i].push(w_cardData);
-            wo_trials[i].push(wo_cardData);
+            // Append parsed-data into the trial arraylist.
+            w_trials[i].card.push(w_cardData);
+            wo_trials[i].card.push(wo_cardData);
         }
+        
     }
 
     simulation.w_replacement = w_trials;
