@@ -11,15 +11,18 @@ const R = require('r-script');
  * @param {Number} n A positive integer that represents the n number of cards to draw.
  */
 const drawCard = (N, n) => {
-    let result = {};
+    let result = {
+        trials: N,
+        draws: n
+    };
 
     // Generate Experiment with replacement.
-    result.withReplacement = R('./../../scripts/draw-card.R')
+    result.w_replacement = R('./scripts/draw-card.R')
     .data(N, n, true)
     .callSync();
 
     // Generate Experiment without replacment
-    result.withoutReplacement = R('./../../scripts/draw-card.R')
+    result.wo_replacement = R('./scripts/draw-card.R')
     .data(N, n, false)
     .callSync();
 
