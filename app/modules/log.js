@@ -12,12 +12,12 @@ if (!fs.existsSync('./logs')) {
 }
 
 /**
- * @module raw
+ * @module writeRaw
  * @param {Object} raw
  * 
  * Converts raw simulation experiment into a JSON and store it in the ./logs directory. 
  */
-const raw = (raw) => {
+const writeRaw = (raw) => {
     let rawJSON = JSON.stringify(raw, null, 2);
     fs.writeFile('logs/raw_simulation.json', rawJSON, err => {
         if (err) throw err;
@@ -26,12 +26,12 @@ const raw = (raw) => {
 };
 
 /**
- * @module parsed
+ * @module writeParsed
  * @param {Object} parse 
  * 
  * Converts parsed simulation experiment into a JSON and store it in the ./logs directory.
  */
-const parsed = (parse) => {
+const writeParsed = (parse) => {
     let parseJSON = JSON.stringify(parse, null, 2);
     fs.writeFile('logs/parsed_simulation.json', parseJSON, err => {
         if (err) throw err;
@@ -39,8 +39,30 @@ const parsed = (parse) => {
     });
 };
 
+/**
+ * @module readRaw
+ * 
+ * Reads the raw_simulation.json and converts into a JavaScript Object
+ */
+const readRaw = () => {
+    let rawJSON = fs.readFileSync('logs/raw_simulation.json');
+    return JSON.parse(rawJSON);
+};
+
+/**
+ * @module readParsed
+ * 
+ * Reads the parsed_simulation.json and converts into a JavaScript Object
+ */
+const readParsed = () => {
+    let parsedJSON = fs.readFileSync('logs/parsed_simulation.json');
+    return JSON.parse(parsedJSON);
+};
+
 
 module.exports = {
-    raw,
-    parsed
+    writeRaw,
+    writeParsed,
+    readRaw,
+    readParsed
 };

@@ -1,9 +1,10 @@
 const drawCard = require('./modules/drawCard');
 const parseExperiment = require('./modules/parseExperiment');
-const log = require('./modules/logResult');
+const log = require('./modules/log');
 
 let rawRes = drawCard(3, 5);
 let parsedRes = parseExperiment(rawRes);
 
-log.raw(rawRes);
-log.parsed(parsedRes);
+log.writeRaw(rawRes);
+log.writeParsed(parsedRes);
+
