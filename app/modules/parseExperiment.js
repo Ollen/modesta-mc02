@@ -2,6 +2,13 @@
  * Converts the result of drawCard module into a readable JavaScript Object.
  */
 
+/**
+ * @function cardValue
+ * @param {Number} n Deck Value
+ * 
+ * Converts a number between 1-52 into a card value ranging between 1-13.
+ * e.g. (1 = Ace, 2 = Deuce, ..., 13 = King)
+ */
 function cardValue(n) {
     let val = n % 13;
     if (val === 0) {
@@ -11,6 +18,12 @@ function cardValue(n) {
     return val;
 }
 
+/**
+ * @function cardSuite
+ * @param {Number} n Deck Value
+ * 
+ * Returns a string that identifies the suite of the card Value.
+ */
 function cardSuite(n) {
     if (n <= 13)
         return 'clubs';
@@ -25,7 +38,7 @@ function cardSuite(n) {
 /**
  * Converts the result of drawCard module into a readable JavaScript Object
  * 
- * @module
+ * @module parseExperiment
  * @param {Object} experiment Object returned by the drawCard module.
  */
 const parseExperiment = (experiment) => {
