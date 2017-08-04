@@ -1,9 +1,13 @@
 {
   "name": "modesta-mc02",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app\\app.js",
+  "scripts": {
+    "start": "app\\app.js"
+  },
   "license": "MIT",
   "dependencies": {
+    "electron": "^1.6.11",
     "r-script": "^0.0.3"
   }
 }
