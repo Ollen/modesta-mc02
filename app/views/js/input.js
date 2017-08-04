@@ -1,0 +1,1 @@
+import {startSimulation} from 'ipcRenderer';

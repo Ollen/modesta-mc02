@@ -5,14 +5,18 @@ const parseExperiment = require('./modules/parseExperiment.js');
 const log = require('./modules/log');
 
 ipcMain.on('start-simulation', (event, arg) => {
-    let rawResult = drawCard(arg.trials, arg.draws);
-    let parsedResult = parseExperiment(rawResult);
+    let rawExperiment = drawCard(arg.trials, arg.draws);
+    let parsedExperiment = parseExperiment(rawExperiment);
 
     // Log
-    log.writeParsed(parsedResult);
-    log.writeRaw(rawResult);
+    log.writeParsed(parsedExperiment);
+    log.writeRaw(rawExperiment);
     
-    event.returnValue = [rawResult, parsedResult];
+    global.sharedObject = {
+        rawExperiment,
+        parsedExperiment
+    };
+    event.returnValue = [rawExperiment, parsedExperiment];
 });
 
 module.exports = ipcMain;
