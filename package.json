@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "app\\app.js",
   "scripts": {
+    "prestart": "SET \"ELECTRON_RUN_AS_NODE=1\"",
     "start": "electron app\\app.js"
   },
   "license": "MIT",

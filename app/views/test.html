@@ -7,3 +7,8 @@
         <h1>Hello World</h1>
     </body>
 </html>
+
+<script>
+    const {ipcRenderer} = require('electron');
+    let result = ipcRenderer.sendSync('start-simulation', {trials: 3, draws: 2});
+</script>

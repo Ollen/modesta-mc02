@@ -1,5 +1,6 @@
 const electron = require('electron');
 const app = electron.app;
+require('./ipcMain');
 
 let mainWindow;
 
@@ -42,4 +43,3 @@ app.on('activate', () => {
 app.on('ready', () => {
     mainWindow = createWindow();
 });
-

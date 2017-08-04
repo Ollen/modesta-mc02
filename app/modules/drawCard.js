@@ -17,12 +17,12 @@ const drawCard = (N, n) => {
     };
 
     // Generate Experiment with replacement.
-    result.w_replacement = R('./scripts/draw-card.R')
+    result.w_replacement = R('./app/scripts/draw-card.R')
     .data(N, n, true)
     .callSync();
 
     // Generate Experiment without replacment
-    result.wo_replacement = R('./scripts/draw-card.R')
+    result.wo_replacement = R('./app/scripts/draw-card.R')
     .data(N, n, false)
     .callSync();
 

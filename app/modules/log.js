@@ -4,8 +4,8 @@
 const fs = require('fs');
 
 // Check if the logs directory exists.
-if (!fs.existsSync('./logs')) {
-    fs.mkdir('./logs', err => {
+if (!fs.existsSync('./app/logs')) {
+    fs.mkdir('./app/logs', err => {
         if (err) throw err;
         console.log('Created ./logs directory');
     });
@@ -19,7 +19,7 @@ if (!fs.existsSync('./logs')) {
  */
 const writeRaw = (raw) => {
     let rawJSON = JSON.stringify(raw, null, 2);
-    fs.writeFile('logs/raw_simulation.json', rawJSON, err => {
+    fs.writeFile('app/logs/raw_simulation.json', rawJSON, err => {
         if (err) throw err;
         console.log('Logged raw simulation');
     });
@@ -33,7 +33,7 @@ const writeRaw = (raw) => {
  */
 const writeParsed = (parse) => {
     let parseJSON = JSON.stringify(parse, null, 2);
-    fs.writeFile('logs/parsed_simulation.json', parseJSON, err => {
+    fs.writeFile('app/logs/parsed_simulation.json', parseJSON, err => {
         if (err) throw err;
         console.log('Logged parsed simulation');
     });
@@ -45,7 +45,7 @@ const writeParsed = (parse) => {
  * Reads the raw_simulation.json and converts into a JavaScript Object
  */
 const readRaw = () => {
-    let rawJSON = fs.readFileSync('logs/raw_simulation.json');
+    let rawJSON = fs.readFileSync('app/logs/raw_simulation.json');
     return JSON.parse(rawJSON);
 };
 
@@ -55,7 +55,7 @@ const readRaw = () => {
  * Reads the parsed_simulation.json and converts into a JavaScript Object
  */
 const readParsed = () => {
-    let parsedJSON = fs.readFileSync('logs/parsed_simulation.json');
+    let parsedJSON = fs.readFileSync('app/logs/parsed_simulation.json');
     return JSON.parse(parsedJSON);
 };
 
