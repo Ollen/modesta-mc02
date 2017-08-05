@@ -1,0 +1,36 @@
+html, body, .wrapper{
+    height: 100%;
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel {
+    border: 1px solid #ececec !important;
+    border-bottom: 3px solid #DDDDDD !important;
+    box-shadow: none !important;
+}
+
+#start-simulation .form-control {
+    background-color: #eefdf4;
+}
+
+::-webkit-input-placeholder {
+    color: #d0beb7 !important;
+}
+
+.btn-success:hover,
+.btn-warning:hover {
+    color: rgb(255, 255, 255);
+}
+
+.input-container{
+    padding-top: 30px;
+}
+
+.title{
+    color: #455A64;
+}

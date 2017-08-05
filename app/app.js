@@ -15,7 +15,7 @@ function createWindow() {
         show: false
     });
 
-    win.loadURL(`file://${__dirname}/views/test.html`);
+    win.loadURL(`file://${__dirname}/views/input.html`);
     win.on('closed', onClosed);
     win.on('ready-to-show', () => {
         win.show();

@@ -1,9 +1,72 @@
 <!DOCTYPE>
 <html>
     <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>Card Drawing Simulation</title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/ct-paper.css">
+        <link rel="stylesheet" href="css/input.css">
     </head>
     <body>
-        
+        <div class="wrapper">
+            <div class="container">
+                 <h2 class="text-center title">
+                     <strong>MC02:</strong> <br>
+                        Card Drawing Simulation
+                     
+                </h2> 
+                <!-- Container Start-->
+                <div class="input-container row">
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <form id="start-simulation">
+                                    <div class="form-group">
+                                        <label for="trialInput">Number of Trials</label>
+                                        <input type="number" id="trialInput" class="form-control text-center" placeholder="10 to 100,000">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="drawInput">Card Draws</label>
+                                        <input type="number" class="form-control text-center" id="drawInput" placeholder="1 to 5">
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-success  btn-block">Simulate</button>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <form id="read-simulation">
+                                    <div class="form-group">
+                                        <label for="drawInput">Log File</label>
+                                        <input type="number" class="form-control text-center" id="drawInput" placeholder="JSON log file">
+                                    </div>
+                                    <button type="submit" class="btn btn-warning  btn-block">Import Experiment</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Input Container End -->
+            </div>
+        </div>
     </body>
 </html>
+
+<script>
+    if (typeof module === 'object') {window.module = module; module = undefined;}
+</script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ct-paper.js"></script>
+<script>if (window.module) module = window.module;</script>
+
+<script src="js/ipcRenderer.js"></script>
+<script src="js/input.js"></script>

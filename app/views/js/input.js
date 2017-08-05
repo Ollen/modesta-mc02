@@ -1,1 +1,1 @@
-import {startSimulation} from 'ipcRenderer';
+
