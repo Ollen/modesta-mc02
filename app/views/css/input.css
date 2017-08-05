@@ -34,3 +34,11 @@ html, body, .wrapper{
 .title{
     color: #455A64;
 }
+
+body{
+    background-color: #FAFAFA;
+}
+
+#importFile {
+    display: none;
+}

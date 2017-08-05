@@ -27,14 +27,16 @@
                                 <form id="start-simulation">
                                     <div class="form-group">
                                         <label for="trialInput">Number of Trials</label>
-                                        <input type="number" id="trialInput" class="form-control text-center" placeholder="10 to 100,000">
+                                        <input type="number" id="trialInput" class="form-control text-center" 
+                                        placeholder="10 to 100,000" min="10" max="100000" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="drawInput">Card Draws</label>
-                                        <input type="number" class="form-control text-center" id="drawInput" placeholder="1 to 5">
+                                        <input type="number" class="form-control text-center" id="drawInput" 
+                                        placeholder="1 to 5" min="1" max="5" required>
                                     </div>
                                     
-                                    <button type="submit" class="btn btn-success  btn-block">Simulate</button>
+                                    <button type="button" class="btn btn-success  btn-block" id="startBtn">Simulate</button>
                                     
                                 </form>
                             </div>
@@ -45,10 +47,11 @@
                             <div class="panel-body">
                                 <form id="read-simulation">
                                     <div class="form-group">
-                                        <label for="drawInput">Log File</label>
-                                        <input type="number" class="form-control text-center" id="drawInput" placeholder="JSON log file">
+                                        <label for="importFile">Log File</label>
+                                        <input type="file" class="form-control text-center" id="importFile" placeholder="JSON log file" required>
+                                        <input type="text" class="form-control text-center" id="tempInput" placeholder="JSON log file" onkeydown="return false">
                                     </div>
-                                    <button type="submit" class="btn btn-warning  btn-block">Import Experiment</button>
+                                    <button type="button" class="btn btn-warning  btn-block" id="importBtn">Import Experiment</button>
                                 </form>
                             </div>
                         </div>
