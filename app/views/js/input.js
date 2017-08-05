@@ -16,6 +16,9 @@ $('#importBtn').click(() => {
         notify('Invalid Input');
         return;
     }
+
+    $('.preloader').modal({backdrop: 'static', keyboard: false});
+    
 });
 
 $('#startBtn').click(() => {
@@ -32,7 +35,7 @@ $('#startBtn').click(() => {
         return;
     }
 
-    // Start Simulation Code Starts Here
+    $('.preloader').modal({backdrop: 'static', keyboard: false});
 });
 
 

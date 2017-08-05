@@ -42,3 +42,32 @@ body{
 #importFile {
     display: none;
 }
+
+.preloader {
+    display:none;
+    overflow-x: hidden;
+    overflow-y: hidden !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0
+}
+
+.modal-backdrop.in {
+    opacity: 1 !important;
+    background-color: #30d89e;
+}
+
+.modal-dialog {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.preloader h2{
+    color: white;
+}
