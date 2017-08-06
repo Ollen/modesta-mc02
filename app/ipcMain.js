@@ -1,4 +1,5 @@
 const {ipcMain} = require('electron');
+const fs = require('fs');
 
 const drawCard = require('./modules/drawCard');
 const parseExperiment = require('./modules/parseExperiment.js');
@@ -17,6 +18,34 @@ ipcMain.on('start-simulation', (event, arg) => {
         parsedExperiment
     };
     event.returnValue = [rawExperiment, parsedExperiment];
+});
+
+ipcMain.on('read-import', (event, arg) => {
+    if (!fs.existsSync(arg.location)) {
+        event.returnValue = false;
+        return;
+    }
+
+    try {
+        let rawJSON = fs.readFileSync(arg.location);
+        let rawExperiment = JSON.parse(rawJSON);
+        let parsedExperiment = parseExperiment(rawExperiment);
+
+
+        log.writeParsed(parsedExperiment);
+        log.writeRaw(rawExperiment);
+    
+        global.sharedObject = {
+            rawExperiment,
+            parsedExperiment
+        };
+    } catch (err) {
+        console.log(err);
+        event.returnValue = false;
+        return;
+    }
+
+    event.returnValue = true;
 });
 
 module.exports = ipcMain;

@@ -18,6 +18,18 @@ $('#importBtn').click(() => {
     }
 
     $('.preloader').modal({backdrop: 'static', keyboard: false});
+
+    setTimeout(() => {
+        let result = readSimulation(importLocation);
+        if (result) {
+            window.location.href = 'test.html';
+        }
+        else {
+            $('.preloader').modal('hide');
+            notify('Invalid/Error reading document');
+        }
+
+    }, 2000);
     
 });
 
@@ -34,8 +46,12 @@ $('#startBtn').click(() => {
         notify('Invalid Input');
         return;
     }
-
     $('.preloader').modal({backdrop: 'static', keyboard: false});
+
+    setTimeout(() => {
+        let result = startSimulation(trialInput, drawInput);
+         window.location.href = 'test.html';
+    }, 2000);
 });
 
 
