@@ -55,7 +55,7 @@ $('#startBtn').click(() => {
         $('.preloader').modal({backdrop: 'static', keyboard: false});
         setTimeout(() => {
             let result = startSimulation(trialInput, drawInput, desiredInput);
-            window.location.href = 'test.html';
+            window.location.href = 'frequency-result.html';
         }, 3000);
     }
 });

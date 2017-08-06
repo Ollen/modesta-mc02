@@ -61,4 +61,12 @@ ipcMain.on('read-import', (event, arg) => {
     event.returnValue = true;
 });
 
+ipcMain.on('getRaw', (event, arg) => {
+    event.returnValue = global.sharedObject.rawExperiment;
+});
+
+ipcMain.on('getParsed', (event, arg) => {
+    event.returnValue = global.sharedObject.parsedExperiment;
+});
+
 module.exports = ipcMain;

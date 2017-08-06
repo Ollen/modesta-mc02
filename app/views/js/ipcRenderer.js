@@ -8,3 +8,10 @@ function readSimulation (location) {
     return ipcRenderer.sendSync('read-import', {location});
 }
 
+function getRaw () {
+    return ipcRenderer.sendSync('getRaw', {});
+}
+
+function getParsed () {
+    return ipcRenderer.sendSync('getParsed', {});
+}
