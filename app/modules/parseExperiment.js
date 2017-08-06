@@ -45,7 +45,9 @@ const parseExperiment = (experiment) => {
     // Store experiment meta-data
     let simulation = {
         trials: experiment.trials,
-        draws: experiment.draws
+        draws: experiment.draws,
+        desiredValue: experiment.desiredValue,
+        desiredProb_wr: experiment.desiredProb_wr
     };
 
     var w_trials = new Array();
