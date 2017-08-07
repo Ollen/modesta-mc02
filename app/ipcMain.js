@@ -4,6 +4,7 @@ const fs = require('fs');
 const drawCard = require('./modules/drawCard');
 const parseExperiment = require('./modules/parseExperiment.js');
 const getIdealProbability_WR = require('./modules/wr_getIdealProb');
+const getIdealProbability_WOR = require('./modules/wor_getIdealProb');
 const log = require('./modules/log');
 
 ipcMain.on('start-simulation', (event, arg) => {
@@ -12,9 +13,12 @@ ipcMain.on('start-simulation', (event, arg) => {
     
     try {
         let desiredProb_wr = getIdealProbability_WR(arg.desiredValue, arg.draws);
+        let desiredProb_wor = getIdealProbability_WOR(arg.draws, arg.desiredValue);
+        
         rawExperiment.desiredValue = arg.desiredValue;
-        rawExperiment.desiredProb_wr = desiredProb_wr;
 
+        rawExperiment.desiredProb_wr = desiredProb_wr;
+        rawExperiment.desiredProb_wor = desiredProb_wor;
     } catch (err) {
         console.log(err);
         throw err;

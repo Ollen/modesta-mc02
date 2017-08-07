@@ -47,7 +47,8 @@ const parseExperiment = (experiment) => {
         trials: experiment.trials,
         draws: experiment.draws,
         desiredValue: experiment.desiredValue,
-        desiredProb_wr: experiment.desiredProb_wr
+        desiredProb_wr: experiment.desiredProb_wr,
+        desiredProb_wor: experiment.desiredProb_wor
     };
 
     var w_trials = new Array();

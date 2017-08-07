@@ -24,7 +24,7 @@ p.sum <- function(p,n,s) {
     p3 <- comb(p-(s*i)-1,p-(s*i)-n)
     sum = sum + (p1 * p2 * p3)
   }
-  return (p0 * sum)
+  return (c(sum * (4)^n, p0 * sum))
 }
 
 do.call(p.sum, input)
