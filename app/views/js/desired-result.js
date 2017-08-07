@@ -7,8 +7,47 @@ let totalDesired_WOR = 0;
 let actualProb_WR = 0;
 let actualProb_WOR = 0;
 
+function createRbinom() {
+    let rbinom = getRbinom_100();
+    // let freq = [];
+    // let label = []
+    // for(let i = 0; i < 100; i++){
+    //     label[i] = i + 1;
+    //     if(rbinom[0][i] != null) {
+    //         freq[rbinom[0][i] - 1] = rbinom[1][i];
+    //     } else if(freq[i] == null){
+    //         freq[i] = 0;
+    //     }
+
+    // }
+
+    let data = {
+        labels: rbinom[0],
+        series: [rbinom[1]]
+    };
+
+    let g1 = new Chartist.Line('#rbinom', data, {
+        showArea: true
+    });
+}
+
+function createRhyper() {
+    let rhyper = getRhyper_100();
+
+    let data = {
+        labels: rhyper[0],
+        series: [rhyper[1]]
+    };
+
+    let g1 = new Chartist.Line('#rhyper', data, {
+        showArea: true
+    });
+
+}
 
 $(document).ready(function () {
+    createRbinom();
+    createRhyper();
     $('.i_p_wor').text(parsedExperiment.desiredProb_wor[1]);
     $('.i_p_wr').text(parsedExperiment.desiredProb_wr[1]);
     
@@ -28,5 +67,4 @@ $(document).ready(function () {
     $('.a_p_wor').text(actualProb_WOR.toFixed(4));
     $('.a_p_wr').text(actualProb_WR.toFixed(4));
 
-    
 });

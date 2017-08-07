@@ -56,7 +56,7 @@ $('#startBtn').click(() => {
         setTimeout(() => {
             let result = startSimulation(trialInput, drawInput, desiredInput);
             window.location.href = 'frequency-result.html';
-        }, 3000);
+        }, 2000);
     }
 });
 
