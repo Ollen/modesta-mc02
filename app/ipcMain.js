@@ -5,6 +5,7 @@ const drawCard = require('./modules/drawCard');
 const parseExperiment = require('./modules/parseExperiment.js');
 const getIdealProbability_WR = require('./modules/wr_getIdealProb');
 const getIdealProbability_WOR = require('./modules/wor_getIdealProb');
+const getRbinom_100 = require('./modules/rbinom_100');
 const log = require('./modules/log');
 
 ipcMain.on('start-simulation', (event, arg) => {
@@ -32,7 +33,8 @@ ipcMain.on('start-simulation', (event, arg) => {
     
     global.sharedObject = {
         rawExperiment,
-        parsedExperiment
+        parsedExperiment,
+        desiredRBinom_100: getRbinom_100(arg.trials, parsedExperiment.desiredProb_wr[1])
     };
     event.returnValue = [rawExperiment, parsedExperiment];
 });
@@ -54,7 +56,8 @@ ipcMain.on('read-import', (event, arg) => {
     
         global.sharedObject = {
             rawExperiment,
-            parsedExperiment
+            parsedExperiment,
+            desiredRBinom_100: getRbinom_100(arg.trials, parsedExperiment.desiredProb_wr[1])
         };
     } catch (err) {
         console.log(err);
@@ -71,6 +74,10 @@ ipcMain.on('getRaw', (event, arg) => {
 
 ipcMain.on('getParsed', (event, arg) => {
     event.returnValue = global.sharedObject.parsedExperiment;
+});
+
+ipcMain.on('getRbinom_100', (event, arg) => {
+    event.returnValue = global.sharedObject.desiredRBinom_100;
 });
 
 module.exports = ipcMain;

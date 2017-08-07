@@ -15,3 +15,7 @@ function getRaw () {
 function getParsed () {
     return ipcRenderer.sendSync('getParsed', {});
 }
+
+function getRbinom_100 () {
+    return ipcRenderer.sendSync('getRbinom_100', {});
+}
