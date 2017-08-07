@@ -6,6 +6,9 @@ const parseExperiment = require('./modules/parseExperiment.js');
 const getIdealProbability_WR = require('./modules/wr_getIdealProb');
 const getIdealProbability_WOR = require('./modules/wor_getIdealProb');
 const getRbinom_100 = require('./modules/rbinom_100');
+const getRhyper_100 = require('./modules/rhyper_100');
+
+const {combinationTotalList} = require('./modules/perm-comb-list');
 const log = require('./modules/log');
 
 ipcMain.on('start-simulation', (event, arg) => {
@@ -34,7 +37,8 @@ ipcMain.on('start-simulation', (event, arg) => {
     global.sharedObject = {
         rawExperiment,
         parsedExperiment,
-        desiredRBinom_100: getRbinom_100(arg.trials, parsedExperiment.desiredProb_wr[1])
+        desiredRBinom_100: getRbinom_100(arg.trials, parsedExperiment.desiredProb_wr[1]),
+        desiredRHyper_100: getRhyper_100(arg.trials, parsedExperiment.desiredProb_wor[0], combinationTotalList[arg.draws] - parsedExperiment.desiredProb_wor[0])
     };
     event.returnValue = [rawExperiment, parsedExperiment];
 });
@@ -78,6 +82,10 @@ ipcMain.on('getParsed', (event, arg) => {
 
 ipcMain.on('getRbinom_100', (event, arg) => {
     event.returnValue = global.sharedObject.desiredRBinom_100;
+});
+
+ipcMain.on('getRhyper_100', (event, arg) => {
+    event.returnValue = global.sharedObject.desiredRHyper_100;
 });
 
 module.exports = ipcMain;

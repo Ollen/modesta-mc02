@@ -19,3 +19,7 @@ function getParsed () {
 function getRbinom_100 () {
     return ipcRenderer.sendSync('getRbinom_100', {});
 }
+
+function getRhyper_100 () {
+    return ipcRenderer.sendSync('getRhyper_100', {});
+}
