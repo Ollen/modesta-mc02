@@ -23,3 +23,11 @@ function getRbinom_100 () {
 function getRhyper_100 () {
     return ipcRenderer.sendSync('getRhyper_100', {});
 }
+
+function getIdealProb_WOR () {
+    return ipcRenderer.sendSync('getIdealProb_WOR', {});
+}
+
+function getIdealProb_WR () {
+    return ipcRenderer.sendSync('getIdealProb_WR', {});
+}

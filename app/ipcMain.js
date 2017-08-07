@@ -7,6 +7,7 @@ const getIdealProbability_WR = require('./modules/wr_getIdealProb');
 const getIdealProbability_WOR = require('./modules/wor_getIdealProb');
 const getRbinom_100 = require('./modules/rbinom_100');
 const getRhyper_100 = require('./modules/rhyper_100');
+const getIdealProb = require('./modules/idealProb');
 
 const {combinationTotalList} = require('./modules/perm-comb-list');
 const log = require('./modules/log');
@@ -86,6 +87,14 @@ ipcMain.on('getRbinom_100', (event, arg) => {
 
 ipcMain.on('getRhyper_100', (event, arg) => {
     event.returnValue = global.sharedObject.desiredRHyper_100;
+});
+
+ipcMain.on('getIdealProb_WOR', (event, arg) => {
+    event.returnValue = getIdealProb.idealProb_WOR;
+});
+
+ipcMain.on('getIdealProb_WR', (event, arg) => {
+    event.returnValue = getIdealProb.idealProb_WR;
 });
 
 module.exports = ipcMain;
