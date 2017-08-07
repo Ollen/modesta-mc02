@@ -48,6 +48,7 @@ function createRhyper() {
 $(document).ready(function () {
     createRbinom();
     createRhyper();
+    $('desiredVal').text(parsedExperiment.desiredValue);
     $('.i_p_wor').text(parsedExperiment.desiredProb_wor[1]);
     $('.i_p_wr').text(parsedExperiment.desiredProb_wr[1]);
     
