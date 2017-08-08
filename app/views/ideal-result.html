@@ -18,6 +18,14 @@
         <link href="css/paper-dashboard.css" rel="stylesheet"/>
         <link href="css/chartist.min.css" rel="stylesheet"/>
         <link href="css/themify-icons.css" rel="stylesheet">
+        <style>
+            td:nth-child(1){
+                text-align: center;
+            }
+            td:nth-child(2){
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <div class="wrapper">
@@ -92,12 +100,37 @@
                                     <div class="content">
                                         <div class="header">
                                             <h4 class="title">Actual Probability Graph</h4>
-                                            <p class="category">With Repitition</p>
+                                            <p class="category">With Repetition</p>
                                             <div class="ct-chart" id="prob-w-rep"></div>
                                         </div>
                                     </div>
                                 </div>
                                 
+                                <div class="panel-group" id="wr_accordion" role="tablist">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" id="heading1" data-toggle="collapse" data-parent="#wr_accordion" data-target="#wr_table">
+                                            <h4 class="panel-title text-center">
+                                                <a role="button" class="accordion-toggle">
+                                                    Table Data (With Repetition)
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="wr_table" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+                                            <div class="panel-body">
+                                                <div class="table-responsive content">
+                                                    <table class="table table-striped table-hover">
+                                                        <thead>
+                                                            <th class="text-center">Total Card Value</th>
+                                                            <th class="text-center">Probability</th>
+                                                        </thead>
+                                                        <tbody>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -111,6 +144,32 @@
                                     </div>
                                     <div class="content">
                                         <div class="ct-chart" id="prob-wo-rep"></div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-group" id="wor_accordion" role="tablist">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" id="heading2" data-toggle="collapse" data-parent="#wor_accordion" data-target="#wor_table">
+                                            <h4 class="panel-title text-center">
+                                                <a role="button" class="accordion-toggle">
+                                                    Table Data (Without Repetition)
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="wor_table" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                                            <div class="panel-body">
+                                                <div class="table-responsive content">
+                                                    <table class="table table-striped table-hover">
+                                                        <thead>
+                                                            <th class="text-center">Total Card Value</th>
+                                                            <th class="text-center">Probability</th>
+                                                        </thead>
+                                                        <tbody>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
