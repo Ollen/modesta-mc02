@@ -25,6 +25,11 @@
             td:nth-child(2){
                 text-align: center;
             }
+            .statistics .numbers h5{
+                font-size: 1em;
+                line-height: 1em;
+                margin-bottom: 5px;
+            }
         </style>
     </head>
     <body>
@@ -94,38 +99,129 @@
 
                 <div class="content">
                     <div class="container-fluid">
+                        <!-- Chart WR -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h4 class="title">Ideal Probability Graph</h4>
+                                        <p class="category">With Repetition</p>
+                                    </div>
+                                    <div class="content">
+                                        <div class="ct-chart" id="prob-w-rep"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Result Stat WR-->
+                        <div class="statistics">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <p class="text-center">Mean</p>
+                                                    <div class="numbers">
+                                                        <h5 class="text-center" id="mean_wr">4.5</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <p class="text-center">Median</p>
+                                                    <div class="numbers">
+                                                        <h5 class="text-center" id="median_wr">4.5</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <p class="text-center">Max</p>
+                                                    <div class="numbers">
+                                                        <h5 class="text-center" id="mode_wr">4.5</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <p class="text-center">Variance</p>
+                                                    <div class="numbers">
+                                                        <h5 class="text-center" id="var_wr">4.5</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <p class="text-center">Standard Deviation</p>
+                                                    <div class="numbers">
+                                                        <h5 class="text-center" id="sd_wr">4.5</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Table WR -->
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="content">
-                                        <div class="header">
-                                            <h4 class="title">Actual Probability Graph</h4>
-                                            <p class="category">With Repetition</p>
-                                            <div class="ct-chart" id="prob-w-rep"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="panel-group" id="wr_accordion" role="tablist">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" id="heading1" data-toggle="collapse" data-parent="#wr_accordion" data-target="#wr_table">
-                                            <h4 class="panel-title text-center">
-                                                <a role="button" class="accordion-toggle">
-                                                    Table Data (With Repetition)
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="wr_table" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
-                                            <div class="panel-body">
-                                                <div class="table-responsive content">
-                                                    <table class="table table-striped table-hover">
-                                                        <thead>
-                                                            <th class="text-center">Total Card Value</th>
-                                                            <th class="text-center">Probability</th>
-                                                        </thead>
-                                                        <tbody>
-                                                        </tbody>
-                                                    </table>
+                                        <div class="panel-group" id="wr_accordion" role="tablist">
+                                            <div class="panel panel-warning">
+                                                <div class="panel-heading" id="heading1" data-toggle="collapse" data-parent="#wr_accordion" data-target="#wr_table">
+                                                    <h4 class="panel-title text-center">
+                                                        <a role="button" class="accordion-toggle">
+                                                            Table Data (With Repetition)
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="wr_table" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+                                                    <div class="panel-body">
+                                                        <div class="table-responsive content">
+                                                            <table class="table table-striped table-hover">
+                                                                <thead>
+                                                                    <th class="text-center">Total Card Value</th>
+                                                                    <th class="text-center">Probability</th>
+                                                                </thead>
+                                                                <tbody>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -135,38 +231,130 @@
                         </div>
 
 
+                        <!-- Chart WOR-->
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="header">
-                                        <h4 class="title">Actual Probability Graph</h4>
+                                        <h4 class="title">Ideal Probability Graph</h4>
                                         <p class="category">Without Repitition</p>
                                     </div>
                                     <div class="content">
                                         <div class="ct-chart" id="prob-wo-rep"></div>
                                     </div>
                                 </div>
-
-                                <div class="panel-group" id="wor_accordion" role="tablist">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" id="heading2" data-toggle="collapse" data-parent="#wor_accordion" data-target="#wor_table">
-                                            <h4 class="panel-title text-center">
-                                                <a role="button" class="accordion-toggle">
-                                                    Table Data (Without Repetition)
-                                                </a>
-                                            </h4>
+                            </div>
+                        </div>
+                        <!-- Result Stat WOR-->
+                        <div class="statistics">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <p class="text-center">Mean</p>
+                                                    <div class="numbers">
+                                                        <h5 class="text-center" id="mean_wor">4.5</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div id="wor_table" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
-                                            <div class="panel-body">
-                                                <div class="table-responsive content">
-                                                    <table class="table table-striped table-hover">
-                                                        <thead>
-                                                            <th class="text-center">Total Card Value</th>
-                                                            <th class="text-center">Probability</th>
-                                                        </thead>
-                                                        <tbody>
-                                                        </tbody>
-                                                    </table>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <p class="text-center">Median</p>
+                                                    <div class="numbers">
+                                                        <h5 class="text-center" id="median_wor">4.5</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <p class="text-center">Max</p>
+                                                    <div class="numbers">
+                                                        <h5 class="text-center" id="mode_wor">4.5</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <p class="text-center">Variance</p>
+                                                    <div class="numbers">
+                                                        <h5 class="text-center" id="var_wor">4.5</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <p class="text-center">Standard Deviation</p>
+                                                    <div class="numbers">
+                                                        <h5 class="text-center" id="sd_wor">4.5</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Table WOR -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="panel-group" id="wor_accordion" role="tablist">
+                                            <div class="panel panel-warning">
+                                                <div class="panel-heading" id="heading2" data-toggle="collapse" data-parent="#wor_accordion" data-target="#wor_table">
+                                                    <h4 class="panel-title text-center">
+                                                        <a role="button" class="accordion-toggle">
+                                                            Table Data (Without Repetition)
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="wor_table" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                                                    <div class="panel-body">
+                                                        <div class="table-responsive content">
+                                                            <table class="table table-striped table-hover">
+                                                                <thead>
+                                                                    <th class="text-center">Total Card Value</th>
+                                                                    <th class="text-center">Probability</th>
+                                                                </thead>
+                                                                <tbody>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

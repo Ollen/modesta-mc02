@@ -1,3 +1,5 @@
+const stat = require('simple-statistics');
+
 let rawExperiment = getRaw();
 let parsedExperiment = getParsed();
 
@@ -25,13 +27,21 @@ function createG1 () {
 
     let g1 = new Chartist.Bar('#prob-w-rep', data);
 
-    // Create Table
+    // Create Table and get Expected Val
     let markup = '';
     for (let i = 0; i < label.length; i++){
         let rowData = `<tr><td>${label[i]}</td><td>${idealProb_WR[i]}</td></tr>`;
         markup = markup + rowData;
     }
+
     $('#wr_table tbody').append(markup);
+    
+    $('#mean_wr').text(stat.mean(idealProb_WR).toFixed(4));
+    $('#median_wr').text(stat.median(idealProb_WR).toFixed(4));
+    $('#mode_wr').text(stat.max(idealProb_WR).toFixed(4));
+    $('#var_wr').text(stat.variance(idealProb_WR).toFixed(4));
+    $('#sd_wr').text(stat.standardDeviation(idealProb_WR).toFixed(4));
+
 }
 
 function createG2 () {
@@ -61,6 +71,12 @@ function createG2 () {
         markup = markup + rowData;
     }
     $('#wor_table tbody').append(markup);
+
+    $('#mean_wor').text(stat.mean(idealProb_WOR).toFixed(4));
+    $('#median_wor').text(stat.median(idealProb_WOR).toFixed(4));
+    $('#mode_wor').text(stat.max(idealProb_WOR).toFixed(4));
+    $('#var_wor').text(stat.variance(idealProb_WOR).toFixed(4));
+    $('#sd_wor').text(stat.standardDeviation(idealProb_WOR).toFixed(4));
 }
 
 $(document).ready(function () {

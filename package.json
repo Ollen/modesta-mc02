@@ -9,6 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "electron": "^1.6.11",
-    "r-script": "^0.0.3"
+    "r-script": "^0.0.3",
+    "simple-statistics": "^4.1.1"
   }
 }
