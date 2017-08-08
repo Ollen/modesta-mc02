@@ -3,7 +3,12 @@ rhyper_100 <- function(N, m, n) {
   m = as.numeric(m)
   n = as.numeric(n)
   
-  freq.table <- table(rhyper(N, m, n, 100))
+  if (n >= 100) {
+    freq.table <- table(rhyper(N, m, n, 100))
+  } else {
+    freq.table <- table(rhyper(N, m, n, 10))
+  }
+  
   df.table <- as.data.frame(freq.table)
   
   return (list(as.numeric(df.table$Var1), df.table$Freq))

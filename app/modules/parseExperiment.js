@@ -62,8 +62,15 @@ const parseExperiment = (experiment) => {
 
         for (let j = 0; j < simulation.draws; j++) {
             // Get the experiment draw value in a trial
-            let w_value = experiment.w_replacement[i][j];
-            let wo_value = experiment.wo_replacement[i][j];
+            let w_value;
+            let wo_value;
+            if (simulation.draws != 1) {
+                w_value = experiment.w_replacement[i][j];
+                wo_value = experiment.wo_replacement[i][j];
+            } else {
+                w_value = experiment.w_replacement[i];
+                wo_value = experiment.wo_replacement[i];
+            }
 
             // Get the card and suite value.
             let w_cardData = {
