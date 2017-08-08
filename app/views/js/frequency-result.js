@@ -34,6 +34,14 @@ function createG1 () {
     };
 
     let g1 = new Chartist.Bar('#freq-w-rep', data);
+
+    // Create Table
+    let markup = '';
+    for (let i = 0; i < label.length; i++){
+        let rowData = `<tr><td>${label[i]}</td><td>${freqList[i]}</td></tr>`;
+        markup = markup + rowData;
+    }
+    $('#wr_table tbody').append(markup);
 }
 
 function createG2 () {
@@ -68,6 +76,14 @@ function createG2 () {
     };
 
     let g1 = new Chartist.Bar('#freq-wo-rep', data);
+
+    // Create Table
+    let markup = '';
+    for (let i = 0; i < label.length; i++){
+        let rowData = `<tr><td>${label[i]}</td><td>${freqList[i]}</td></tr>`;
+        markup = markup + rowData;
+    }
+    $('#wor_table tbody').append(markup);
 }
 
 $(document).ready(function () {
