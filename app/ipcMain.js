@@ -17,9 +17,14 @@ ipcMain.on('start-simulation', (event, arg) => {
     let rawExperiment = drawCard(arg.trials, arg.draws);
     
     try {
-        let desiredProb_wr = getIdealProbability_WR(arg.desiredValue, arg.draws);
-        let desiredProb_wor = getIdealProbability_WOR(arg.draws, arg.desiredValue);
+        let desiredProb_wr = Number(getIdealProb.idealProb_WR[arg.draws][arg.desiredValue - arg.draws]);
+        desiredProb_wr = [(desiredProb_wr * Math.pow(52, arg.draws)).toFixed(0), desiredProb_wr];
         
+        let wor_min = arg.draws != 5 ? arg.draws : 6;
+        let desiredProb_wor = Number(getIdealProb.idealProb_WOR[arg.draws][arg.desiredValue - wor_min]);
+        desiredProb_wor = [(desiredProb_wor * combinationTotalList[arg.draws]).toFixed(0), desiredProb_wor];
+
+
         rawExperiment.desiredValue = arg.desiredValue;
 
         rawExperiment.desiredProb_wr = desiredProb_wr;
