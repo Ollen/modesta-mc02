@@ -5,7 +5,7 @@ d_rbinom <- function(N, p){
   freq.table <-  table(rbinom(N,N,p))
   df.table <- as.data.frame(freq.table)
   
-  return (list(as.numeric(df.table$Var1), df.table$Freq, df.table$Freq / N))
+  return (list(df.table$Var1, df.table$Freq, df.table$Freq / N))
 }
 
 

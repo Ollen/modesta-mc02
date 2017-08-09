@@ -6,7 +6,7 @@ d_rnbinom <- function(N, p, s){
   freq.table <-  table(rnbinom(N,s, p))
   df.table <- as.data.frame(freq.table)
   
-  return (list(as.numeric(df.table$Var1), df.table$Freq, df.table$Freq / N))
+  return (list(df.table$Var1, df.table$Freq, df.table$Freq / N))
 }
 
 do.call(d_rnbinom, input)

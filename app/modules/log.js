@@ -39,6 +39,14 @@ const writeParsed = (parse) => {
     });
 };
 
+const writeBinom = (binom) => {
+    let parseJSON = JSON.stringify(binom, null, 2);
+    fs.writeFile('app/logs/binom_experiment.json', parseJSON, err => {
+        if (err) throw err;
+        console.log('Logged binom experiment');
+    });
+};
+
 /**
  * @module readRaw
  * 
@@ -63,6 +71,7 @@ const readParsed = () => {
 module.exports = {
     writeRaw,
     writeParsed,
+    writeBinom,
     readRaw,
     readParsed
 };

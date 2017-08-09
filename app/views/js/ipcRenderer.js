@@ -31,3 +31,7 @@ function getIdealProb_WOR () {
 function getIdealProb_WR () {
     return ipcRenderer.sendSync('getIdealProb_WR', {});
 }
+
+function getBinom () {
+    return ipcRenderer.sendSync('getBinom', {});
+}
