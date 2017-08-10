@@ -3,10 +3,11 @@ d_rnbinom <- function(N, p, s){
   p = as.numeric(p)
   s = as.numeric(s)
   
-  freq.table <-  table(rnbinom(N,s, p))
+  rnbinom.list <- rnbinom(N,s, p)
+  freq.table <-  table(rnbinom.list)
   df.table <- as.data.frame(freq.table)
   
-  return (list(df.table$Var1, df.table$Freq, df.table$Freq / N))
+  return (list(df.table$rnbinom.list, df.table$Freq, df.table$Freq / N, rnbinom.list))
 }
 
 do.call(d_rnbinom, input)
