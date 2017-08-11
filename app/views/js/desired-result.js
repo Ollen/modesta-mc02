@@ -45,7 +45,21 @@ function createRhyper() {
 
 }
 
+function displayWays() {
+    let permutation = parsedExperiment.desiredProb_wr[0] + "/" + permutationTotalList[rawExperiment.draws];
+    let combination = parsedExperiment.desiredProb_wor[0] + "/" + combinationTotalList[rawExperiment.draws];
+    
+    $('.perm-ways').text(permutation);
+    $('.comb-ways').text(combination);
+
+}
+
 $(document).ready(function () {
+    let desiredValue = rawExperiment.desiredValue;
+    $('.desired-value').text(desiredValue);
+    displayWays();
+
+
     createRbinom();
     createRhyper();
     $('desiredVal').text(parsedExperiment.desiredValue);
