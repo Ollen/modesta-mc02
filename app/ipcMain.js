@@ -123,4 +123,12 @@ ipcMain.on('getBinom', (event, arg) => {
     event.returnValue = global.sharedObject.binomExperiments;
 });
 
+ipcMain.on('rnbinom_actual', (event, arg) => {
+    event.returnValue = getRnbinom_actual(arg.n, arg.p, arg.s);
+});
+
+ipcMain.on('rnbinom_ideal', (event, arg) => {
+    event.returnValue = getRnbinom_ideal(arg.n, arg.p, arg.s);
+});
+
 module.exports = ipcMain;

@@ -35,3 +35,11 @@ function getIdealProb_WR () {
 function getBinom () {
     return ipcRenderer.sendSync('getBinom', {});
 }
+
+function getRnbinom_actual (N,p,s) {
+    return ipcRenderer.sendSync('rnbinom_actual', {n:N, p, s});
+}
+
+function getRnbinom_ideal (N,p,s) {
+    return ipcRenderer.sendSync('rnbinom_ideal', {n:N, p, s});
+}
