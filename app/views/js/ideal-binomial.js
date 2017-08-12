@@ -3,6 +3,9 @@ const stat = require('simple-statistics');
 let binomIdeal = getBinom().binom_ideal;
 let binomActual = getBinom().binom_actual;
 
+let trials = getRaw().trials;
+let desiredProb = getRaw().desiredProb_wor[1];
+
 function createActualBinomFreq() {
     let data  = {
         labels: binomActual[0],
@@ -72,6 +75,9 @@ function createTables() {
 
 }
 $('.desired-value').text(getRaw().desiredValue);
+
+
+$('.r-function code').text(`rbinom(${trials}, ${trials}, ${desiredProb.toFixed(4)})`);
 
 createStats();
 createActualBinomFreq();
