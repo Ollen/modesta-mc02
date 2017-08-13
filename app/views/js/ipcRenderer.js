@@ -43,3 +43,11 @@ function getRnbinom_actual (N,p,s) {
 function getRnbinom_ideal (N,p,s) {
     return ipcRenderer.sendSync('rnbinom_ideal', {n:N, p, s});
 }
+
+function getRhyper_actual (nn, m,n,k) {
+    return ipcRenderer.sendSync('rhyper_actual', {nn,m,n,k});
+}
+
+function getRhyper_ideal (p,m,n) {
+    return ipcRenderer.sendSync('rhyper_ideal', {p,m,n});
+}

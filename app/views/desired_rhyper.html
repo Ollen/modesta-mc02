@@ -79,13 +79,13 @@
                                 <p>Desired Binomial</p>
                             </a>
                         </li>
-                        <li class="active">
+                        <li class="">
                             <a href="desired_negbinom.html">
                                 <i class="ti-bar-chart"></i>
                                 <p>Desired NegBinom</p>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="active">
                             <a href="desired_rhyper.html">
                                 <i class="ti-bar-chart"></i>
                                 <p>Desired HyperG.</p>
@@ -112,7 +112,7 @@
                                 <span class="icon-bar bar2"></span>
                                 <span class="icon-bar bar3"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Desired Negative Binomial Experiment</a>
+                            <a class="navbar-brand" href="#">Desired Hypergeometric Distribution</a>
                         </div>
                         <div class="collapse navbar-collapse">
                         </div>
@@ -155,7 +155,7 @@
                                 <div class="card">
                                     <div class="content">
                                         <div class="header">
-                                            <h4 class="title">Actual Desired Negative Binomial Distribution</h4>
+                                            <h4 class="title">Actual Desired Hypergeometric Distribution</h4>
                                             <p class="category">Frequency</p>
                                             <div class="ct-chart" id="actual-binom-freq"></div>
                                         </div>
@@ -285,7 +285,7 @@
                                 <div class="card">
                                     <div class="content">
                                         <div class="header">
-                                            <h4 class="title">Actual Desired Negative Binomial Distribution</h4>
+                                            <h4 class="title">Actual Desired Hypergeometric Distribution</h4>
                                             <p class="category">Probability</p>
                                             <div class="ct-chart" id="actual-binom-prob"></div>
                                         </div>
@@ -333,7 +333,7 @@
                                 <div class="card">
                                     <div class="content">
                                         <div class="header">
-                                            <h4 class="title">Ideal Desired Negative Binomial Distribution</h4>
+                                            <h4 class="title">Ideal Desired Hypergeometric Distribution</h4>
                                             <p class="category">Probability</p>
                                             <div class="ct-chart" id="ideal-binom-prob"></div>
                                         </div>
@@ -393,12 +393,12 @@
                         <div class="content">
                             <form>
                                 <div class="form-group">
-                                    <label for="trials">Number of Trials</label>
-                                    <input type="number" class="form-control" id="trials">
+                                    <label for="trials">(nn) Number of Observation</label>
+                                    <input type="number" class="form-control" id="observation">
                                 </div>
                                 <div class="form-group">
-                                    <label for="success">Trials before getting nth success</label>
-                                    <input type="number" class="form-control" id="success">
+                                    <label for="success">(k) Number of Trials</label>
+                                    <input type="number" class="form-control" id="trials">
                                 </div>
                                 <div class="form-group">
                                     <button type="button" class="btn btn-block" id="function-btn">Change Parameters</button>
@@ -425,5 +425,5 @@
 
     <script src="js/perm-comb-list.js"></script>
     <script src="js/ipcRenderer.js"></script>
-    <script src="js/ideal-negbinom.js"></script>
+    <script src="js/ideal-rhyper.js"></script>
 </html>

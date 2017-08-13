@@ -4,7 +4,7 @@ let nbinomIdeal = getBinom().nbinom_ideal;
 let nbinomActual = getBinom().nbinom_actual;
 
 let trials = getRaw().trials;
-let desiredProb = getRaw().desiredProb_wor[1];
+let desiredProb = getRaw().desiredProb_wr[1];
 
 let rnbinom_data;
 let rnbinom_ideal;

@@ -12,7 +12,8 @@ const getRbinom_ideal = require('./modules/rbinom_ideal');
 const getRbinom_actual = require('./modules/rbinom_actual');
 const getRnbinom_ideal = require('./modules/rnbinom_ideal');
 const getRnbinom_actual = require('./modules/rnbinom_actual');
-
+const getRhyper_actual = require('./modules/rhyper_actual');
+const getRhyper_ideal = require('./modules/rhyper_ideal');
 
 
 const {combinationTotalList} = require('./modules/perm-comb-list');
@@ -44,7 +45,9 @@ ipcMain.on('start-simulation', (event, arg) => {
             binom_actual: getRbinom_actual(arg.trials, desiredProb_wr[1]),
             binom_ideal: getRbinom_ideal(arg.trials, desiredProb_wr[1]),
             nbinom_actual: getRnbinom_actual(arg.trials, desiredProb_wor[1]),
-            nbinom_ideal: getRnbinom_ideal(arg.trials, desiredProb_wor[1])
+            nbinom_ideal: getRnbinom_ideal(arg.trials, desiredProb_wor[1]),
+            rhyper_actual: getRhyper_actual(undefined, parsedExperiment.desiredProb_wor[0], combinationTotalList[arg.draws] - parsedExperiment.desiredProb_wor[0], undefined),
+            rhyper_ideal: getRhyper_ideal(undefined, parsedExperiment.desiredProb_wor[0], combinationTotalList[arg.draws] - parsedExperiment.desiredProb_wor[0])
             
         };
     } catch (err) {
@@ -129,6 +132,14 @@ ipcMain.on('rnbinom_actual', (event, arg) => {
 
 ipcMain.on('rnbinom_ideal', (event, arg) => {
     event.returnValue = getRnbinom_ideal(arg.n, arg.p, arg.s);
+});
+
+ipcMain.on('rhyper_actual', (event, arg) => {
+    event.returnValue = getRhyper_actual(arg.nn, arg.m, arg.n, arg.k);
+});
+
+ipcMain.on('rhyper_ideal', (event, arg) => {
+    event.returnValue = getRhyper_ideal(arg.p, arg.m, arg.n);
 });
 
 module.exports = ipcMain;
